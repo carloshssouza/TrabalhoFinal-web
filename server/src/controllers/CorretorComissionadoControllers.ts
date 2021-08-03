@@ -8,19 +8,19 @@ class CorretorComissionadoController{
             let exist = false;
             const check = await CorretorContratado.find({})
             for(let i = 0; i < check.length; i++) {
-                if(check[i].numero_creci === req.body.numero_creci){
+                if(check[i].creci === req.body.creci){
                     exist = true;
                     break;
                 }
             }
             if(exist){
-                return res.status(400).json({ message: 'Já existe um corretor com esse numero_creci'})
+                return res.status(400).json({ message: 'Já existe um corretor com esse creci'})
             } else{
                 const corretorCreated = await CorretorComissionado.create({
-                    numero_creci: req.body.numero_creci,
+                    creci: req.body.creci,
                     tipo: "comissionado",
-                    nome: req.body.nome,
-                    percentual_comissao: req.body.percentual_comissao
+                    nomeCorretor: req.body.nomeCorretor,
+                    percentualComissao: req.body.percentualComissao
                 });
                 return res.status(201).json(corretorCreated);
             }
@@ -31,7 +31,7 @@ class CorretorComissionadoController{
     
     public async getCorretor(req: Request, res: Response):Promise<Response>{
         try {
-            const corretor = await CorretorComissionado.find({numero_creci: req.params.numero_creci});
+            const corretor = await CorretorComissionado.find({creci: req.params.creci});
             return res.status(200).json(corretor);
         } catch (error) {
             return res.status(400).json({message: error});
@@ -49,11 +49,11 @@ class CorretorComissionadoController{
 
     public async updateCorretor(req: Request, res: Response):Promise<Response>{
         try {
-            const corretor = await CorretorComissionado.find({numero_creci: req.params.numero_creci});
+            const corretor = await CorretorComissionado.find({creci: req.params.creci});
             const corretorUpdated = await CorretorComissionado.updateOne(
-                {numero_creci: req.params.numero_creci},
+                {creci: req.params.creci},
                 {$set: {
-                    percentual_comissao: req.body.percentual_comissao !== undefined ? req.body.percentual_comissao : corretor[0].percentual_comissao
+                    percentualComissao: req.body.percentualComissao !== undefined ? req.body.percentualComissao : corretor[0].percentualComissao
                 }}
             )
             return res.status(200).json(corretorUpdated);
@@ -64,7 +64,7 @@ class CorretorComissionadoController{
 
     public async deleteCorretor(req: Request, res: Response): Promise<Response> {
         try {
-            const corretorDeleted = await CorretorComissionado.remove({numero_creci: req.params.numero_creci});
+            const corretorDeleted = await CorretorComissionado.remove({creci: req.params.creci});
             return res.status(200).json(corretorDeleted);
         } catch (error) {
             return res.status(400).json({message: error});

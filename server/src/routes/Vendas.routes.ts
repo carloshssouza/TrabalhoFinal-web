@@ -4,16 +4,16 @@ import VendasController from '../controllers/VendasControllers';
 const routes = Router();
 
 //Contratado
-routes.get('/api/vendasContratado/:_id', VendasController.getVendaContratado);
+routes.get('/api/vendasContratado/:codigo', VendasController.getVendaContratado);
 routes.get('/api/vendasContratado', VendasController.getAllVendasContratado);
 routes.post('/api/vendasContratado', VendasController.createVendaContratado);
-routes.patch('/api/vendasContratado/:_id', VendasController.updateVendaContratado);
-routes.delete('/api/vendasContratado/:_id', VendasController.deleteVendaContratado);
+routes.patch('/api/vendasContratado/:codigo', VendasController.updateVendaContratado);
+routes.delete('/api/vendasContratado/:codigo', VendasController.deleteVendaContratado);
 
 //Comissionado
-routes.get('/api/vendasComissionado/:_id', VendasController.getVendaComissionado);
+routes.get('/api/vendasComissionado/:codigo', VendasController.getVendaComissionado);
 routes.get('/api/vendasComissionado', VendasController.getAllVendasComissionado);
 routes.post('/api/vendasComissionado', VendasController.createVendaComissionado);
-routes.patch('/api/vendasComissionado/:_id', VendasController.updateVendaComissionado);
-routes.delete('/api/vendasComissionado/:_id', VendasController.deleteVendaComissionado);
+routes.patch('/api/vendasComissionado/:codigo', VendasController.updateVendaComissionado);
+routes.delete('/api/vendasComissionado/:codigo', VendasController.deleteVendaComissionado);
 export default routes

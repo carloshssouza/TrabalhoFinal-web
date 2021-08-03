@@ -9,68 +9,68 @@ class CorretorContratadoController{
             let exist = false;
             const check = await CorretorComissionado.find({})
             for(let i = 0; i < check.length; i++) {
-                if(check[i].numero_creci === req.body.numero_creci){
+                if(check[i].creci === req.body.creci){
                     exist = true;
                     break;
                 }
             }
             if(exist){
-                return res.status(400).json({ message: 'Já existe um corretor com esse numero_creci'});
+                return res.status(400).json({ message: 'Já existe um corretor com esse creci'});
             } else{
                 const corretorCreated = await CorretorContratado.create({
-                    numero_creci: req.body.numero_creci,
-                    nome: req.body.nome,
+                    creci: req.body.creci,
+                    nomeCorretor: req.body.nomeCorretor,
                     tipo: "contratado",
                     salario: req.body.salario,
-                    data_admissao: req.body.data_admissao
+                    dataAdmissao: req.body.dataAdmissao
                 });
-                return res.json(corretorCreated);
+                return res.status(201).json(corretorCreated);
             }
            
         } catch (error) {
-            return res.json({message: error});
+            return res.status(400).json({message: error});
         }
     }
     
     public async getCorretor(req: Request, res: Response):Promise<Response>{
         try {
-            const corretor = await CorretorContratado.find({numero_creci: req.params.numero_creci});
-            return res.json(corretor);
+            const corretor = await CorretorContratado.find({creci: req.params.creci});
+           return res.status(200).json(corretor);
         } catch (error) {
-            return res.json({message: error});
+            return res.status(400).json({message: error});
         }
     }
 
     public async getAllCorretores(req: Request, res: Response):Promise<Response>{
         try {
             const corretores = await CorretorContratado.find({});
-            return res.json(corretores);
+           return res.status(200).json(corretores);
         } catch (error) {
-            return res.json({message: error});
+            return res.status(400).json({message: error});
         }
     }
 
     public async updateCorretor(req: Request, res: Response):Promise<Response>{
         try {
-            const corretor = await CorretorContratado.find({numero_creci: req.params.numero_creci});
+            const corretor = await CorretorContratado.find({creci: req.params.creci});
             const corretorUpdated = await CorretorContratado.updateOne(
-                {numero_creci: req.params.numero_creci},
+                {creci: req.params.creci},
                 {$set: {
                     salario: req.body.salario !== undefined ? req.body.salario : corretor[0].salario,
                 }}
             )
-            return res.json(corretorUpdated);
+           return res.status(200).json(corretorUpdated);
         } catch (error) {
-            return res.json({message: error});
+            return res.status(400).json({message: error});
         }
     }
 
     public async deleteCorretor(req: Request, res: Response): Promise<Response> {
         try {
-            const corretorDeleted = await CorretorContratado.remove({numero_creci: req.params.numero_creci});
-            return res.json(corretorDeleted);
+            const corretorDeleted = await CorretorContratado.remove({creci: req.params.creci});
+            return res.status(200).json(corretorDeleted);
         } catch (error) {
-            return res.json({message: error});
+            return res.status(400).json({message: error});
         }
     }
 }

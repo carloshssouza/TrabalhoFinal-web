@@ -9,18 +9,18 @@ class ImovelController{
                 codigo: req.body.codigo,
                 tipo: req.body.tipo,
                 descricao: req.body.descricao,
-                nome_vendedor: req.body.nome_vendedor,
-                preco_solicitado: req.body.preco_solicitado,
-                url1: req.body.url1,
-                url2: req.body.url2,
-                url3: req.body.url3,
-                data_cadastro: req.body.data_cadastro,
+                nomeVendedor: req.body.nomeVendedor,
+                preco: req.body.preco,
+                imagem1: req.body.imagem1,
+                imagem2: req.body.imagem2,
+                imagem3: req.body.imagem3,
+                dataDeCadastro: req.body.dataDeCadastro,
                 vendido: false
             });
            
             return res.status(201).json(imovelCreated);
         } catch (error) {
-            return res.json({message: error});
+            return res.status(400).json({message: error});
         }
     }
     
@@ -28,18 +28,18 @@ class ImovelController{
         try {
             const tipo = req.params.tipo;
             const imovel = await Imovel.find({tipo: tipo});
-            return res.json(imovel);
+            return res.status(200).json(imovel);
         } catch (error) {
-            return res.json({message: error});
+            return res.status(400).json({message: error});
         }
     }
 
     public async getAllImovel(req: Request, res: Response):Promise<Response>{
         try {
             const imoveis = await Imovel.find({});
-            return res.json(imoveis);
+            return res.status(200).json(imoveis);
         } catch (error) {
-            return res.json({message: error});
+            return res.status(400).json({message: error});
         }
     }
 
@@ -48,29 +48,29 @@ class ImovelController{
             const imovel = await Imovel.find({codigo: req.params.codigo});
             const data = {
                 descricao: req.body.descricao !== undefined ? req.body.descricao : imovel[0].descricao,
-                nome_vendedor: req.body.nome_vendedor !== undefined ? req.body.nome_vendedor : imovel[0].nome_vendedor,
-                preco_solicitado: req.body.preco_solicitado !== undefined ? req.body.preco_solicitado : imovel[0].preco_solicitado,
-                url1: req.body.url1 !== undefined ? req.body.url1 : imovel[0].url1,
-                url2: req.body.url2 !== undefined ? req.body.url2 : imovel[0].url2,
-                url3: req.body.url3 !== undefined ? req.body.url3 : imovel[0].url3,
-                data_cadastro: req.body.data_cadastro !== undefined ? req.body.data_cadastro : imovel[0].data_cadastro
+                nomeVendedor: req.body.nomeVendedor !== undefined ? req.body.nomeVendedor : imovel[0].nomeVendedor,
+                preco: req.body.preco !== undefined ? req.body.preco : imovel[0].preco,
+                imagem1: req.body.imagem1 !== undefined ? req.body.imagem1 : imovel[0].imagem1,
+                image2: req.body.image2 !== undefined ? req.body.imagem2 : imovel[0].imagem2,
+                imagem3: req.body.imagem3 !== undefined ? req.body.imagem3 : imovel[0].imagem3,
+                dataDeCadastro: req.body.dataDeCadastro !== undefined ? req.body.dataDeCadastro : imovel[0].dataDeCadastro
             }
             const imovelUpdated = await Imovel.updateOne(
                 {codigo: req.params.codigo},
                 {$set: data}
             )
-            return res.json(imovelUpdated);
+            return res.status(200).json(imovelUpdated);
         } catch (error) {
-            return res.json({message: error});
+            return res.status(400).json({message: error});
         }
     }
 
     public async deleteImovel(req: Request, res: Response): Promise<Response> {
         try {
             const imovelDeleted = await Imovel.remove({codigo: req.params.codigo});
-            return res.json(imovelDeleted);
+            return res.status(200).json(imovelDeleted);
         } catch (error) {
-            return res.json({message: error});
+            return res.status(400).json({message: error});
         }
     }
 }

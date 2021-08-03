@@ -1,19 +1,19 @@
 import { Schema, model, Document } from "mongoose";
 
 interface CorretorContratadoInterface extends Document{
-    numero_creci: string
-    nome: string
+    creci: string
+    nomeCorretor: string
     tipo: string
     salario: number
-    data_admissao: Date
+    dataAdmissao: Date
 }
 
 const CorretorContratadoSchema = new Schema<CorretorContratadoInterface>({
-    numero_creci: {type: String, required: true, unique: true},
-    nome: { type: String, required: true}, 
+    creci: {type: String, required: true, unique: true},
+    nomeCorretor: { type: String, required: true}, 
     tipo: { type: String, required: true},
     salario: { type: Number, required: true},
-    data_admissao: { type: Date, required: true}
+    dataAdmissao: { type: Date, required: true}
 }, {
     timestamps: true
 })

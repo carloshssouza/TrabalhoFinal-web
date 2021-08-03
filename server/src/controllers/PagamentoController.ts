@@ -13,23 +13,23 @@ class PagamentoControllers{
             const dt = new Date(parseInt(periodoSplited[0]), parseInt(periodoSplited[1]));
             const ano = dt.getFullYear();
             const mes = dt.getMonth();
-            const numero_creci = req.params.numero_creci
-            const corretor = await CorretorContratado.find({numero_creci: req.params.numero_creci});
+            const creci = req.params.creci
+            const corretor = await CorretorContratado.find({creci: req.params.creci});
             const vendas = await VendaContratado.find({});
             const vendasFiltradas = vendas.filter(value => {
-                let temp = value.data_venda.toISOString().split('-');
+                let temp = value.dataVenda.toISOString().split('-');
                 if(parseInt(temp[0]) === ano && parseInt(temp[1]) === mes){
                     return value;
                 }
             })
     
             for(let i = 0; i < vendasFiltradas.length; i++){
-                if(vendasFiltradas[i].corretor === numero_creci){
-                    comissao += vendasFiltradas[i].valor_real_venda * 0.01
+                if(vendasFiltradas[i].nomeCorretor === creci){
+                    comissao += vendasFiltradas[i].valorVenda * 0.01
                 }
             }
             const response = {
-                nome: corretor[0].nome,
+                nome: corretor[0].nomeCorretor,
                 tipo: corretor[0].tipo,
                 total_pagar: corretor[0].salario + comissao
             }
@@ -48,24 +48,24 @@ class PagamentoControllers{
             const ano = dt.getFullYear();
             const mes = dt.getMonth();
             
-            const corretor = await CorretorComissionado.find({numero_creci: req.params.numero_creci});
+            const corretor = await CorretorComissionado.find({creci: req.params.creci});
             const vendas = await VendaComissionado.find({});
             
             const vendasFiltradas = vendas.filter(value => {
-                let temp = value.data_venda.toISOString().split('-');
+                let temp = value.dataVenda.toISOString().split('-');
                 if(parseInt(temp[0]) === ano && parseInt(temp[1]) === mes){
-                    console.log(value.data_venda)
+                    console.log(value.dataVenda)
                     return value;
                 }
             })
         
             for(let i = 0; i < vendasFiltradas.length; i++){
-                if(vendasFiltradas[i].corretor === req.params.numero_creci){
-                    comissao += vendasFiltradas[i].valor_real_venda * corretor[0].percentual_comissao
+                if(vendasFiltradas[i].nomeCorretor === req.params.creci){
+                    comissao += vendasFiltradas[i].valorVenda * corretor[0].percentualComissao
                 }
             }
             const response = {
-                nome: corretor[0].nome,
+                nome: corretor[0].nomeCorretor,
                 tipo: corretor[0].tipo,
                 total_pagar: comissao
             }
