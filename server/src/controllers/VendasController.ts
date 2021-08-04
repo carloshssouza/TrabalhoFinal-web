@@ -9,7 +9,7 @@ class VendasController{
     //Cria uma venda
     public async createVenda(req: Request, res: Response):Promise<Response>{
         try {
-            const imovel = await Imovel.find({codigo: req.body.codigo})
+            const imovel = await Imovel.find({codigo: req.body.imovel})
             if(imovel[0].vendido === true || imovel.length === 0){
                 return res.status(400).json({message: 'Esse codigo é de um imovel que já foi vendido ou não existe'})
             }
