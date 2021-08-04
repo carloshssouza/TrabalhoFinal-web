@@ -62,12 +62,12 @@ Robson de Arruda Silva, curso de Sistemas de informação
 * Execute o comando: `npm install`
 
 ### Back-end:
-* Retorne um diretório, utilizando o comando: cd ..
-* Navegue para o diretório server, utilizando o comando: cd server
-* Execute o comando: npm install
+* Retorne um diretório, utilizando o comando: `cd ..`
+* Navegue para o diretório server, utilizando o comando: `cd server`
+* Execute o comando: `npm install`
 * Mantenha o terminal aberto
 	
-# Pronto, os pacotes foram instalados!
+# :trophy: Pronto, os pacotes foram instalados!
 
 Agora, para configurar a pasta de dados do mongodb:
 	No diretório server, crie um diretório chamado: data
