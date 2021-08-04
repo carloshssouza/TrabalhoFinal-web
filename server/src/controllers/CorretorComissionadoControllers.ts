@@ -3,6 +3,7 @@ import CorretorComissionado from '../models/CorretorComissionado';
 import CorretorContratado from '../models/CorretorContratado';
 
 class CorretorComissionadoController{
+
     public async createCorretor(req: Request, res: Response):Promise<Response>{
         try {
             let exist = false;

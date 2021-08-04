@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/server.ts",
+    "start": "nodemon src/server.ts",
+    "client": "cd .. && cd client && ng serve -o",
+    "dev": "concurrently \"nodemon src/server.ts\" \"npm run client\"",
     "build": "sucrase ./src -d ./dist --transforms typescript,imports"
   },
   "keywords": [],
@@ -18,6 +20,7 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
+    "concurrently": "^6.2.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.13.3",

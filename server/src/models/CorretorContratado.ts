@@ -1,5 +1,6 @@
 import { Schema, model, Document } from "mongoose";
 
+//Criação da estrutura do objeto CorretorContratado
 interface CorretorContratadoInterface extends Document{
     creci: string
     nomeCorretor: string
@@ -8,6 +9,7 @@ interface CorretorContratadoInterface extends Document{
     dataAdmissao: Date
 }
 
+//Criação do Schema CorretorContratado
 const CorretorContratadoSchema = new Schema<CorretorContratadoInterface>({
     creci: {type: String, required: true, unique: true},
     nomeCorretor: { type: String, required: true}, 

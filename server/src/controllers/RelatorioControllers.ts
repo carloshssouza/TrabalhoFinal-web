@@ -2,62 +2,40 @@ import {Request, Response} from 'express';
 import CorretorContratado from '../models/CorretorContratado';
 import CorretorComissionado from '../models/CorretorComissionado';
 import Imovel from '../models/Imovel';
-import VendaComissionado from '../models/VendaComissionado';
-import VendaContratado from '../models/VendaContratado';
+import Venda from '../models/Venda';
 
 class RelatorioControllers{
     public async gerarRelatorio(req: Request, res: Response):Promise<Response>{
         try {
 
-            console.log(req.params.periodo)
             //Faturamento
             const periodoSplited = (req.params.periodo.split('-'));
             const dt = new Date(parseInt(periodoSplited[0]), parseInt(periodoSplited[1]));
             const ano = dt.getFullYear();
             const mes = dt.getMonth();
           
-            const vendasContratado = await VendaContratado.find({});
-            const vendasFiltradasContratados = vendasContratado.filter(value => {
-                let temp = value.dataVenda.toISOString().split('-');
-                console.log(temp)
-                if(parseInt(temp[0]) === ano && parseInt(temp[1]) === mes){
-                    return value;
-                }
-            })
-
-            const vendasComissionado = await VendaComissionado.find({});
-            const vendasFiltradasComissionados = vendasComissionado.filter(value => {
+            const vendas = await Venda.find({});
+            const vendasFiltradas = vendas.filter(value => {
                 let temp = value.dataVenda.toISOString().split('-');
                 if(parseInt(temp[0]) === ano && parseInt(temp[1]) === mes){
                     return value;
                 }
             })
 
-            const arrayFaturamentoContratado = vendasFiltradasContratados.length > 0 ?vendasFiltradasContratados.map(value => {
+            const arrayFaturamento = vendasFiltradas.length > 0 ? vendasFiltradas.map(value => {
                 return value.valorVenda * 0.05
             }) : 0;
             
-            const arrayFaturamentoComissionado = vendasFiltradasComissionados.length > 0 ?vendasFiltradasComissionados.map(value =>{
-                return value.valorVenda * 0.05
-            }) : 0;
             
-            let faturamentoContratado:number;
-            if(arrayFaturamentoContratado != 0){
-                 faturamentoContratado = arrayFaturamentoContratado.reduce((total, currentValue) => total + currentValue)
+            let faturamento;
+            if(arrayFaturamento != 0){
+                 faturamento = arrayFaturamento.reduce((total, currentValue) => total + currentValue)
             } else {
-                faturamentoContratado = 0;
+                faturamento = 0;
             }
-
-            let faturamentoComissionado:number;
-            if(arrayFaturamentoComissionado != 0){
-                faturamentoComissionado = arrayFaturamentoComissionado.reduce((total, currentValue) => total + currentValue);
-            } else {
-                faturamentoComissionado = 0;
-            }
-            const faturamento = faturamentoComissionado + faturamentoContratado;
 
             // A relação de imóveis vendidos
-            const qtdImoveisVendidos = vendasFiltradasComissionados.length + vendasFiltradasContratados.length;
+            const qtdImoveisVendidos = vendasFiltradas.length
 
             // A relação de imoveis encalhados
             const imoveisEncalhados = await Imovel.find({vendido: false});
@@ -71,9 +49,9 @@ class RelatorioControllers{
 
             for(let i = 0; i < corretorContratado.length; i++){
                 faturamentoPorCorretor = 0;
-                for(let j = 0; j < vendasFiltradasContratados.length; j++){
-                    if(corretorContratado[i].creci === vendasFiltradasContratados[j].corretor){
-                        faturamentoPorCorretor += vendasFiltradasContratados[j].valorVenda
+                for(let j = 0; j < vendasFiltradas.length; j++){
+                    if(corretorContratado[i].creci === vendasFiltradas[j].creci){
+                        faturamentoPorCorretor += vendasFiltradas[j].valorVenda
                     }
                 }
                 listaFaturamentoCorretores.push({
@@ -85,9 +63,9 @@ class RelatorioControllers{
 
             for(let i = 0; i < corretorComissionado.length; i++){
                 faturamentoPorCorretor = 0;
-                for(let j = 0; j < vendasFiltradasComissionados.length; j++){
-                    if(corretorComissionado[i].creci === vendasFiltradasComissionados[j].nomeCorretor){
-                        faturamentoPorCorretor += vendasFiltradasComissionados[j].valorVenda
+                for(let j = 0; j < vendasFiltradas.length; j++){
+                    if(corretorComissionado[i].creci === vendasFiltradas[j].creci){
+                        faturamentoPorCorretor += vendasFiltradas[j].valorVenda
                     }
                 }
                 listaFaturamentoCorretores.push({
@@ -102,13 +80,11 @@ class RelatorioControllers{
             const listaComissao = [];
             let comissao:number;
             
-           
-        
             for(let i = 0; i < corretorContratado.length; i++){
                 comissao = 0;
-                for(let j = 0; j < vendasFiltradasContratados.length; j++){
-                    if(corretorContratado[i].creci === vendasFiltradasContratados[j].corretor){
-                        comissao += vendasFiltradasContratados[j].valorVenda * 0.01
+                for(let j = 0; j < vendasFiltradas.length; j++){
+                    if(corretorContratado[i].creci === vendasFiltradas[j].creci){
+                        comissao += vendasFiltradas[j].valorVenda * 0.01
                     }
                 }
                 listaPagamento.push({
@@ -127,9 +103,9 @@ class RelatorioControllers{
             for(let i = 0; i < corretorComissionado.length; i++){
                 comissao = 0;
                
-                for(let j = 0; j < vendasFiltradasComissionados.length; j++){
-                    if(corretorComissionado[i].creci === vendasFiltradasComissionados[j].nomeCorretor){
-                        comissao += vendasFiltradasComissionados[j].valorVenda * corretorComissionado[i].percentualComissao
+                for(let j = 0; j < vendasFiltradas.length; j++){
+                    if(corretorComissionado[i].creci === vendasFiltradas[j].creci){
+                        comissao += vendasFiltradas[j].valorVenda * corretorComissionado[i].percentualComissao
                     }
 
                 }
@@ -167,8 +143,6 @@ class RelatorioControllers{
             return res.status(400).json({message: error});
         }
     }
-
-    
 }
 
 export default new RelatorioControllers();

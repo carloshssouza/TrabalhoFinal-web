@@ -1,5 +1,6 @@
 import { Schema, model, Document } from "mongoose";
 
+//Criação da estrutura do objeto CorrretorComissionado
 interface CorretorComissionadoInterface extends Document{
     creci: string
     nomeCorretor: string
@@ -7,6 +8,7 @@ interface CorretorComissionadoInterface extends Document{
     percentualComissao: number
 }
 
+//Criação do Schema do CorretorComissionado
 const CorretorComissionadoSchema = new Schema<CorretorComissionadoInterface>({
     creci: {type: String, required: true, unique: true},
     nomeCorretor: { type: String, required: true}, 

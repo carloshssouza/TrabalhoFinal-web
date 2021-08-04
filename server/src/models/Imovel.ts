@@ -1,5 +1,6 @@
 import { Schema, model, Document } from "mongoose";
 
+//Criação da estrutura do objeto Imovel
 interface ImovelInterface extends Document{
     codigo: string //codigo
     tipo: string
@@ -13,6 +14,7 @@ interface ImovelInterface extends Document{
     vendido: boolean
 }
 
+//Criação do Schema Imovel
 const ImovelSchema = new Schema<ImovelInterface>({
     codigo: {type: String, required: true, unique: true}, //codigo
     tipo: { type: String, required: true},

@@ -1,9 +1,11 @@
 import {Request, Response} from 'express';
 import CorretorContratado from '../models/CorretorContratado'
 import CorretorComissionado from '../models/CorretorComissionado'
-import VendaContratado from '../models/VendaContratado'
 
 class CorretorContratadoController{
+    public getRef():string{
+        return 'CorretorContratado';
+    }
     public async createCorretor(req: Request, res: Response):Promise<Response>{
         try {
             let exist = false;

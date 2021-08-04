@@ -3,6 +3,7 @@ import Imovel from '../models/Imovel';
 
 class ImovelController{
    
+    //Cria um imovel
     public async createImovel(req: Request, res: Response):Promise<Response>{
         try {
             const imovelCreated = await Imovel.create({
@@ -24,6 +25,7 @@ class ImovelController{
         }
     }
     
+    //Consulta um imovel
     public async getImovel(req: Request, res: Response):Promise<Response>{
         try {
             const tipo = req.params.tipo;
@@ -34,15 +36,17 @@ class ImovelController{
         }
     }
 
+    //Consulta todos imoveis disponiveis para venda
     public async getAllImovel(req: Request, res: Response):Promise<Response>{
         try {
-            const imoveis = await Imovel.find({});
+            const imoveis = await Imovel.find({vendido: false});
             return res.status(200).json(imoveis);
         } catch (error) {
             return res.status(400).json({message: error});
         }
     }
 
+    //Atualiza dados de um imovel
     public async updateImovel(req: Request, res: Response):Promise<Response>{
         try {
             const imovel = await Imovel.find({codigo: req.params.codigo});
@@ -65,6 +69,7 @@ class ImovelController{
         }
     }
 
+    //Deleta um imovel
     public async deleteImovel(req: Request, res: Response): Promise<Response> {
         try {
             const imovelDeleted = await Imovel.remove({codigo: req.params.codigo});
