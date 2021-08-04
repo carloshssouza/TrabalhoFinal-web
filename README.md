@@ -5,7 +5,7 @@
 
 ## :closed_book: Informações do trabalho
 
-  ### É um Sistema para Controle de Vendas de Imóveis
+  ### :boom: É um Sistema para Controle de Vendas de Imóveis
   * Disciplina: Desenvolvimento Web
   * Professor: Laercio Baldochi Júnior
   * Universidade: Unifei - Universidade Federal de Itajubá
