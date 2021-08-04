@@ -1,0 +1,33 @@
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+button {
+  margin: 20px 15px 0px 0px;
+}
+
+.brokers-color {
+  color: #a3a3a3;
+}
+
+.hide {
+  display: none;
+}
+
+h6 {
+  margin-top: 10px;
+  color: purple;
+}
+
+span {
+  font-size: 0.7rem;
+  color: grey;
+}
+
+#dataName {
+  color: darkgray;
+  margin-bottom: 3px;
+  font-size: 0.7rem;
+}

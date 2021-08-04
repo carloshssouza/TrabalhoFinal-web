@@ -1,0 +1,58 @@
+<div class="max-wid">
+    <mat-card>
+        <mat-card-title>Cadastrar Imóvel</mat-card-title>
+        <form>
+            <mat-form-field class="product-color">Tipo: 
+                <select matInput [(ngModel)]="product.tipo" name="tipo" required>
+                    <option value="Casa">Casa</option>
+                    <option value="Apartamento">Apartamento</option>
+                    <option value="Sala Comercial">Sala Comercial</option>
+                    <option value="Lote">Lote</option>
+                    <option value="Sítio">Sítio</option>
+                    <option value="Chácara">Chácara</option>
+                    <option value="Fazenda">Fazenda</option>
+                </select>
+            </mat-form-field>
+            <mat-form-field>
+                <input type="number" matInput placeholder="Código"
+                    [(ngModel)]="product.codigo" name="codigo" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Descrição"
+                    [(ngModel)]="product.descricao" name="descricao" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Nome do Vendedor"
+                    [(ngModel)]="product.nomeVendedor" name="nomeVendedor" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input type="number" matInput placeholder="Preço (R$)"
+                    [(ngModel)]="product.preco" name="preco" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="date" class="product-color" placeholder="Data"
+                    [(ngModel)]="product.dataDeCadastro" name="dataDeCadastro" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="URL da Imagem Principal" id="imagem1"
+                    [(ngModel)]="product.imagem1" name="imagem1" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="URL da imagem 2" 
+                    [(ngModel)]="product.imagem2" name="imagem2" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="URL da imagem 3" 
+                    [(ngModel)]="product.imagem3" name="imagem3" required>
+            </mat-form-field>
+        </form>
+        <button mat-raised-button (click)="createProduct()" color="primary">
+            Salvar
+        </button>
+        
+        <button mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+    </mat-card>
+</div>
+

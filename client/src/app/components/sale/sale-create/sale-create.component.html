@@ -1,0 +1,44 @@
+<mat-card>
+    <mat-card-title>Cadastrar Venda de Imóvel</mat-card-title>
+    <form>
+
+        <mat-form-field> 
+            <input type="number" matInput placeholder="Código da venda"
+                [(ngModel)]="sale.codigo" name="codigo" required>
+        </mat-form-field>
+
+        <p>Código do Imóvel:</p>
+        <select id="imovel" name="imovel" [(ngModel)]="sale.imovel" required>
+            <option [ngValue]="codigo.codigo" *ngFor="let codigo of product">{{codigo.codigo}}</option>
+        </select> 
+
+        <p>Número do CRECI:</p>
+        <select id="creci" name="creci" [(ngModel)]="sale.creci" required> 
+            <option [ngValue]="creci.creci" *ngFor="let creci of brokers">{{creci.creci}}</option>
+            <option [ngValue]="creci.creci" *ngFor="let creci of brokers2">{{creci.creci}}</option>
+        </select> 
+
+        <mat-form-field>
+            <input type="number" matInput placeholder="Valor da Venda"
+                [(ngModel)]="sale.valorVenda" name="valorVenda" required>
+        </mat-form-field>
+
+        <mat-form-field> 
+            <input type="text" matInput placeholder="Nome do Comprador"
+                [(ngModel)]="sale.comprador" name="comprador" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="date" class="sale-color" placeholder="Data de Venda"
+                [(ngModel)]="sale.dataVenda" name="dataVenda" id="dataVenda" required>
+        </mat-form-field>
+
+    </form>
+    <button mat-raised-button (click)="createSale()" color="primary">
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button> 
+</mat-card>

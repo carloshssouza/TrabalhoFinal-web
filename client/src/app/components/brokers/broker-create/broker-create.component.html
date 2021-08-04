@@ -1,0 +1,40 @@
+<mat-card>
+    <mat-card-title>Cadastrar Corretor</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome do Corretor"
+                [(ngModel)]="brokers.nomeCorretor" name="nomeCorretor" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Número do CRECI"
+                [(ngModel)]="brokers.creci" name="creci" type="number" required>
+        </mat-form-field>
+        <mat-form-field class="brokers-color">
+            Tipo <span>(bloqueará inserção(ões) de acordo com a escolha)</span>: 
+            <select matInput [(ngModel)]="brokers.tipo" name="tipo" id="verificacao" onchange="verifica(this.value)">
+                <option value="Contratado">Contratado</option>
+                <option value="Comissionado">Comissionado</option>
+            </select>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="number" matInput placeholder="Salário"
+                [(ngModel)]="brokers.salario" name="salario" id="salario">
+        </mat-form-field>
+        <mat-form-field>
+            <p class="dataName">Data de Admissão: </p>
+            <input matInput type="date" class="brokers-color" placeholder="Data"
+                [(ngModel)]="brokers.dataAdmissao" name="dataAdmissao" id="dataAdmissao"> 
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="number" min="1" max="3" placeholder="Percentual de Comissão"
+                [(ngModel)]="brokers.percentualComissao" name="percentualComissao" id="percentualComissao">
+        </mat-form-field> 
+    </form>
+    <button mat-raised-button (click)="createBroker()" color="primary">
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button> 
+</mat-card>

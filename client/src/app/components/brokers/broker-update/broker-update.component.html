@@ -1,0 +1,34 @@
+<mat-card>
+    <mat-card-title>Alterar Corretor <span> *Pode alterar apenas o que você deseja, mas é preciso selecionar o tipo do corretor</span></mat-card-title>
+    <form>
+        <mat-form-field class="brokers-color">Tipo <span>(bloqueará inserção(ões) de acordo com a escolha)</span>: 
+            <select matInput [(ngModel)]="brokers.tipo" name="tipo" id="verificacao" onchange="verifica2(this.value)">
+                <option value="Contratado">Contratado</option>
+                <option value="Comissionado">Comissionado</option>
+            </select>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="number" matInput placeholder="Salário"
+                [(ngModel)]="brokers.salario" name="salario" id="salario">
+        </mat-form-field>
+        <mat-form-field>
+            <p id="dataName">Data de Admissão: </p>
+            <input matInput type="date" class="brokers-color" placeholder="Data"
+                [(ngModel)]="brokers.dataAdmissao" name="dataAdmissao" id="dataAdmissao">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="number" min="1" max="5" placeholder="Percentual de Comissão (de 1 a 3)"
+                [(ngModel)]="brokers.percentualComissao" name="percentualComissao" id="percentualComissao">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="updateBroker()" color="primary">
+        Salvar
+    </button> 
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+
+
+    <h6>Não vai? Talvez seja porque você selecionou o tipo de corretor errado!</h6>
+</mat-card>

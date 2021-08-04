@@ -1,0 +1,30 @@
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+button {
+  margin: 20px 15px 0px 0px;
+}
+
+select {
+  margin-bottom: 18px;
+}
+
+p {
+  margin: 0;
+}
+
+.sale-color,
+p {
+  color: #a3a3a3;
+}
+
+.hide {
+  display: none;
+}
+
+span {
+  font-size: 0.7rem;
+}

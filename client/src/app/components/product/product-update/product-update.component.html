@@ -1,0 +1,40 @@
+<mat-card>
+    <mat-card-title>Alterar Imóvel <span>*Pode alterar apenas o que você deseja</span></mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Descrição"
+                [(ngModel)]="product.descricao" name="descricao">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Nome do Vendedor"
+                [(ngModel)]="product.nomeVendedor" name="nomeVendedor">
+        </mat-form-field>
+        <mat-form-field>
+            <input type="number" matInput placeholder="Preço (R$)"
+                [(ngModel)]="product.preco" name="preco">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="date" class="product-color" placeholder="Data"
+                [(ngModel)]="product.dataDeCadastro" name="dataDeCadastro">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="URL da Imagem Principal" id="imagem1"
+                [(ngModel)]="product.imagem1" name="imagem1">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="URL da imagem 2" 
+                [(ngModel)]="product.imagem2" name="imagem2">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="URL da imagem 3" 
+                [(ngModel)]="product.imagem3" name="imagem3">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="updateProduct()" color="primary">
+        Atualizar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

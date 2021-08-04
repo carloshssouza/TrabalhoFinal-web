@@ -1,0 +1,31 @@
+.sidenav {
+  background: rgb(36, 0, 24);
+  background: linear-gradient(
+    56deg,
+    rgba(36, 0, 24, 1) 0%,
+    rgba(103, 9, 121, 1) 74%,
+    rgba(43, 0, 116, 1) 100%
+  );
+  width: 245px;
+}
+
+.sidenav a {
+  color: #fff;
+  text-shadow: 2px 2px #000000;
+}
+
+.sidenav a:hover {
+  font-size: 1.2rem;
+  color: #ffc2fc;
+  transition: 0.1s ease-in;
+}
+
+.sidenav i {
+  padding-right: 10px;
+}
+
+.content {
+  color: black;
+  padding: 16px;
+  background-color: #fff;
+}

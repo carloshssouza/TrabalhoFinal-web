@@ -1,0 +1,22 @@
+.footer {
+  color: white;
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+
+  display: flex;
+  justify-content: flex-end;
+
+  background: linear-gradient(
+    302deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(52, 48, 52, 1) 56%,
+    rgba(43, 0, 116, 1) 100%
+  );
+}
+
+.footer > span {
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-shadow: 2px 1px #6b6b6b;
+}

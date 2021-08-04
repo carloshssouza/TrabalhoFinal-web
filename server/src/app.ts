@@ -7,8 +7,6 @@ import Vendas from './routes/Vendas.routes';
 import Pagamento from './routes/Pagamento.routes'
 import Relatorio from './routes/Relatorio.routes'
 
-
-
 class App{
     public express: express.Application
 

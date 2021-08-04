@@ -1,0 +1,27 @@
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+button {
+  margin: 20px 15px 0px 0px;
+}
+
+.product-color {
+  color: #a3a3a3;
+}
+
+.hide {
+  display: none;
+}
+
+.max-wid {
+  max-height: 900px;
+}
+
+@media only screen and (max-height: 900px) {
+  .max-wid {
+    max-height: 550px;
+  }
+}

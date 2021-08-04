@@ -1,0 +1,21 @@
+.home .title {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.home .subtitle {
+  font-size: 1.1rem;
+}
+
+.alert-text {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #c72a2a;
+}
+
+span {
+  font-size: 0.9rem;
+  color: red;
+}

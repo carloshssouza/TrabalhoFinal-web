@@ -1,0 +1,92 @@
+<div class="max-wid mat-elevation">
+    <h2>Corretores Cadastrados</h2>
+    <div class="select-box">
+        <p>Se preferir, selecione o tipo do empregado:</p>
+        <select [(ngModel)]="search" name="tipo">
+            <option value="">Todos</option>
+            <option value="Contratado">Contratado</option>
+            <option value="Comissionado">Comissionado</option>
+        </select>
+    </div>
+
+    <h1>Contratados</h1>
+    <table mat-table [dataSource]="brokers2 |filter:search">
+        <ng-container matColumnDef="nomeCorretor">
+            <th mat-header-cell *matHeaderCellDef>Nome do Corretor</th>
+            <td mat-cell *matCellDef="let row">{{row.nomeCorretor}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="tipo">
+            <th mat-header-cell *matHeaderCellDef>Tipo do Empregado</th>
+            <td mat-cell *matCellDef="let row">{{row.tipo}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="creci">
+            <th mat-header-cell *matHeaderCellDef>Nº CRECI</th>
+            <td mat-cell *matCellDef="let row">{{row.creci}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="salario">
+            <th mat-header-cell *matHeaderCellDef>Salário</th>
+            <td mat-cell *matCellDef="let row">{{row.salario ? (row.salario | currency: 'BRL') : "Não Contém"}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="dataAdmissao">
+            <th mat-header-cell *matHeaderCellDef>Data de Admissão</th>
+            <td mat-cell *matCellDef="let row">{{row.dataAdmissao | date: 'mediumDate'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Ações</th>
+            <td mat-cell *matCellDef="let row">
+                <a routerLink="/brokers/update/{{ row.creci }}" class="edit">
+                    <i class="material-icons">
+                        edit
+                    </i>
+                </a>
+            </td>
+        </ng-container> 
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+    </table>
+
+    <br>
+
+    <h1>Comissionados</h1> 
+    <table mat-table [dataSource]="brokers |filter:search">
+        <ng-container matColumnDef="nomeCorretor">
+            <th mat-header-cell *matHeaderCellDef>Nome do Corretor</th>
+            <td mat-cell *matCellDef="let row">{{row.nomeCorretor}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="tipo">
+            <th mat-header-cell *matHeaderCellDef>Tipo do Empregado</th>
+            <td mat-cell *matCellDef="let row">{{row.tipo}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="creci">
+            <th mat-header-cell *matHeaderCellDef>Nº CRECI</th>
+            <td mat-cell *matCellDef="let row">{{row.creci}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="percentualComissao">
+            <th mat-header-cell *matHeaderCellDef>Percentual de Comissão %</th>
+            <td mat-cell *matCellDef="let row">{{row.percentualComissao ? row.percentualComissao : "Não Contém"}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Ações</th>
+            <td mat-cell *matCellDef="let row">
+                <a routerLink="/brokers/update/{{ row.creci }}" class="edit">
+                    <i class="material-icons">
+                        edit
+                    </i>
+                </a>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

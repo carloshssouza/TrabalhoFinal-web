@@ -1,0 +1,10 @@
+button {
+  margin-bottom: 30px;
+  background: #6b11be;
+  color: white;
+}
+
+button:hover {
+  font-size: 1rem;
+  transition: 0.1s ease-in;
+}

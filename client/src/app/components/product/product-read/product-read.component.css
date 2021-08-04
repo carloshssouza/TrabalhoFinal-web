@@ -1,0 +1,80 @@
+table {
+  width: 100%;
+}
+
+.select-box {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+}
+
+h2 {
+  margin-bottom: 0;
+}
+
+.img {
+  display: flex;
+}
+
+.img2 {
+  margin: 5px 0 0 5px;
+}
+
+.img2 img {
+  border-radius: 9px;
+}
+
+p {
+  font-size: 0.8rem;
+  color: #575757;
+  display: inline;
+  margin: 0 5px 0 10px;
+}
+
+select {
+  border: 1px solid purple;
+  border-radius: 15px;
+}
+
+.edit {
+  margin-right: 10px;
+}
+
+.edit > i {
+  color: #d9cd26;
+}
+
+.delete > i {
+  color: #e35e6b;
+}
+
+.image-column {
+  border-radius: 20px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  margin: 5px 0 0 0;
+}
+
+.original-photo {
+  font-size: 0.8rem;
+  text-align: center;
+  margin-left: 6px;
+  text-decoration: none;
+  color: #a464c2;
+}
+
+.original-photo:hover {
+  color: #51126e;
+  font-weight: bold;
+}
+
+.max-wid {
+  max-height: 900px;
+}
+
+@media only screen and (max-height: 900px) {
+  .max-wid {
+    max-height: 500px;
+  }
+}

@@ -21,7 +21,7 @@ class CorretorComissionadoController{
                     creci: req.body.creci,
                     tipo: "comissionado",
                     nomeCorretor: req.body.nomeCorretor,
-                    percentualComissao: req.body.percentualComissao
+                    percentualComissao: req.body.percentualComissao / 100
                 });
                 return res.status(201).json(corretorCreated);
             }

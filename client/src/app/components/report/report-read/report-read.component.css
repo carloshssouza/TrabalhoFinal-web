@@ -1,0 +1,83 @@
+table {
+  width: 100%;
+}
+
+p {
+  font-size: 0.8rem;
+  color: #575757;
+  display: inline;
+  margin: 0 5px 0 10px;
+}
+
+hr {
+  margin-top: 50px;
+}
+
+.yearMonth {
+  border: 1px solid purple;
+  border-radius: 15px;
+}
+
+.input-date {
+  border: 1px solid purple;
+  border-radius: 15px;
+}
+
+.edit {
+  margin-right: 10px;
+}
+
+.edit > i {
+  color: #d9cd26;
+}
+
+.delete > i {
+  color: #e35e6b;
+}
+
+.max-wid {
+  max-height: 900px;
+}
+
+.req-rel {
+  display: flex;
+  align-items: center;
+}
+
+.req-rel button {
+  margin: 0 5px;
+  padding: 5px;
+}
+
+@media only screen and (max-height: 900px) {
+  .max-wid {
+    max-height: 500px;
+  }
+}
+
+.search {
+  margin: 10px 0;
+}
+
+.block {
+  display: block;
+}
+
+i {
+  font-size: 0.8rem;
+}
+
+button {
+  background-color: blueviolet;
+  margin-top: 20px;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  font-size: 0.9rem;
+}
