@@ -73,9 +73,10 @@ Robson de Arruda Silva, curso de Sistemas de informação
 
 * No diretório server, crie um diretório chamado: data
 
-* Procure, no seu computador, o diretório bin do mongodb 
-  (Se o mongodb foi instalado de maneria padrão geralmente fica em C:\Program Files\MongoDB\Server\4.4\bin)
-  
+* Procure, no seu computador, o diretório bin do mongodb
+
+    (Se o mongodb foi instalado de maneria padrão geralmente fica em C:\Program Files\MongoDB\Server\4.4\bin)
+
 * Abra um terminal a partir desse diretório
 
 	Pegue o endereço do diretório 'data' criado anteriormente no diretório server
