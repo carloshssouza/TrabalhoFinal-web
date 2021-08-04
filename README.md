@@ -39,11 +39,11 @@ Robson de Arruda Silva, curso de Sistemas de informação
 
 ## :computer: Tecnologias utilizadas
   ### MEAN stack
-  >>M - Mongo
-  >>E - Express
-  >>A - Angular
-  >>N - Node
-  >>Linguagem: Typescript
+  *M - Mongo
+  *E - Express
+  *A - Angular
+  *N - Node
+  ### Linguagem: Typescript
 
 6 - Passo a passo para executar o projeto
    
