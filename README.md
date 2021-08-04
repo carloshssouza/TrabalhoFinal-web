@@ -38,12 +38,12 @@ Robson de Arruda Silva, curso de Sistemas de informação
 4 - Gif da aplicação (Pode pular por enquanto)
 
 ## :computer: Tecnologias utilizadas
-  ### MEAN stack
+  ### >MEAN stack
   * M - Mongo
   * E - Express
   * A - Angular
   * N - Node
-  ### Linguagem: Typescript
+  ### >Linguagem: Typescript
 
 6 - Passo a passo para executar o projeto
    
