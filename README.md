@@ -12,13 +12,23 @@ Trabalho final da disciplina COM222 - Desenvolvimento Web
 
 ## :closed_book: Informações da equipe
 
-2 - Integrantes do grupo:
-    Nome: João Lucas Ribeiro, Matrícula: 2019005856
-    Nome: Carlos Henrique Silva, Matrícula: 2019015979
-    Nome: Fauzi Consoli Esper, Matrícula: 27497
-    Nome: Robson de Arruda Silva, Matrícula: 2019013624
-    Nome: Flávio Mohallen, Matrícula: 35036
+## :construction_worker: Desenvolvido Por
+```
+Carlos Henrique Silva, curso de Sistemas de informação
+-> Matrícula: 2019015979
 
+Fauzi Consoli Esper, curso de Sistemas de informação
+-> Matrícula: 27497
+
+Flávio Mohallen, curso de Sistemas de informação
+-> Matrícula: 35036
+
+João Lucas Ribeiro, curso de Sistemas de informação
+-> Matrícula: 2019005856
+
+Robson de Arruda Silva, curso de Sistemas de informação
+-> Matrícula: 2019013624
+```
 3 - Descrição deste trabalho:
     Neste trabalho foi implementado um sistema para gestão de vendas de
 imóveis a ser utilizado por uma imobiliária. A empresa que solicitou o sistema trabalha com a venda de imóveis rurais e urbanos. Os imóveis comercializados são dos seguintes tipos: casa, apartamento, sala comercial, lote, chácara, sítio e fazenda. Este sistema é capaz de cadastrar os imóveis à venda, com os seguintes atributos: código, tipo, descrição, nome do vendedor (proprietário), preço solicitado, imagem e data de cadastro (campo livre para digitação).
