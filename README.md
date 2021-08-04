@@ -45,7 +45,7 @@ Robson de Arruda Silva, curso de Sistemas de informação
   * N - Node
   ### >Linguagem: Typescript
 
-6 - Passo a passo para executar o projeto
+## :dart: Passo a passo para executar o projeto
    
 Como clonar o repositório?
 
