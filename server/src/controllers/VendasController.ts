@@ -2,13 +2,20 @@ import {Request, Response} from 'express';
 import Venda from '../models/Venda';
 import Imovel from '../models/Imovel';
 import CorretorContratado from '../models/CorretorContratado';
+import CorretorComissionado from '../models/CorretorComissionado';
 
 class VendasController{
 
     //Cria uma venda
     public async createVenda(req: Request, res: Response):Promise<Response>{
         try {
+            const imovel = await Imovel.find({codigo: req.body.codigo})
+            if(imovel[0].vendido === true || imovel.length === 0){
+                return res.status(400).json({message: 'Esse codigo é de um imovel que já foi vendido ou não existe'})
+            }
+          
             const corretorContratado = await CorretorContratado.find({creci: req.body.creci});
+            const corretorComissionado = await CorretorComissionado.find({creci: req.body.creci});
             if(corretorContratado.length !== 0){
                 const vendaCreated = await Venda.create({
                     codigo: req.body.codigo,
@@ -28,7 +35,8 @@ class VendasController{
                     }}
                 )
                 return res.json(vendaCreated);
-            } else{
+            } else if(corretorComissionado.length != 0){
+                
                 const vendaCreated = await Venda.create({
                     codigo: req.body.codigo,
                     valorVenda: req.body.valorVenda,
@@ -45,7 +53,9 @@ class VendasController{
                         vendido: true
                     }}
                 )
-                return res.json(vendaCreated);
+                return res.status(201).json(vendaCreated);
+            } else{
+                return res.status(400).json({message: 'Não existe corretor com esse creci'})
             }
             
         } catch (error) {

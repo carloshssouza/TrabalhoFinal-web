@@ -11,7 +11,7 @@ interface ImovelInterface extends Document{
     imagem2: string
     imagem3: string
     dataDeCadastro: Date
-    vendido: boolean
+    vendido?: boolean
 }
 
 //Criação do Schema Imovel
@@ -25,7 +25,7 @@ const ImovelSchema = new Schema<ImovelInterface>({
     imagem2: { type: String, required: true},
     imagem3: { type: String, required: true},
     dataDeCadastro: { type: Date, required: true},
-    vendido: { type: Boolean, required: true}
+    vendido: { type: Boolean}
 }, {
     timestamps: true
 });

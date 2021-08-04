@@ -6,6 +6,12 @@ class ImovelController{
     //Cria um imovel
     public async createImovel(req: Request, res: Response):Promise<Response>{
         try {
+            const imovel = await Imovel.find({codigo: req.params.codigo})
+            console.log(imovel)
+            if(imovel.length > 0){
+                return res.status(400).json({message: 'Ja existe um imovel com esse codigo'})
+            } 
+        
             const imovelCreated = await Imovel.create({
                 codigo: req.body.codigo,
                 tipo: req.body.tipo,
