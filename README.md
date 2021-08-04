@@ -53,7 +53,7 @@ Robson de Arruda Silva, curso de Sistemas de informação
 
 `git clone https://github.com/carloshssouza/TrabalhoFinal-web`
 
-  Abrir um terminal ou git bash a partir da pasta gerada do git clone
+  Em seguida, abra um terminal ou git bash a partir da pasta gerada do git clone
 
 ## Instalação dos pacotes
 
