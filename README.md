@@ -55,17 +55,19 @@ Robson de Arruda Silva, curso de Sistemas de informação
 
   Abrir um terminal ou git bash a partir da pasta gerada do git clone
 
-- Instalação dos pacotes
-	Front: 
-		- Navegue para o diretório client, utilizando o comando: cd client
-		- Execute o comando: npm install
+## Instalação dos pacotes
 
-	backend:
-		- Retorne um diretório, utilizando o comando: cd ..
-		- Navegue para o diretório server, utilizando o comando: cd server
-		- Execute o comando: npm install
-		- Mantenha o terminal aberto
-	Pronto, os pacotes foram instalados
+### Front-end: 
+* Navegue para o diretório client, utilizando o comando: `cd client`
+* Execute o comando: `npm install`
+
+### Back-end:
+* Retorne um diretório, utilizando o comando: cd ..
+* Navegue para o diretório server, utilizando o comando: cd server
+* Execute o comando: npm install
+* Mantenha o terminal aberto
+	
+# Pronto, os pacotes foram instalados!
 
 Agora, para configurar a pasta de dados do mongodb:
 	No diretório server, crie um diretório chamado: data
