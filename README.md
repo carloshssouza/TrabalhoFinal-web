@@ -79,21 +79,22 @@ Robson de Arruda Silva, curso de Sistemas de informação
 
 * Abra um terminal a partir desse diretório
 
-	Pegue o endereço do diretório 'data' criado anteriormente no diretório server
-	Agora no terminal que foi aberto na pasta bin do mongodb, execute o seguinte comando:
+* Pegue o endereço do diretório 'data' criado anteriormente no diretório server
+
+* Agora, no terminal que foi aberto na pasta bin do mongodb, execute o seguinte comando:
 
   `mongod --dbpatch endereco-diretorio-data`
 
 
-Para iniciar o backend:
-	- No terminal navegue para o diretório server
-	- Execute o comando: npm start
-	- Será inicializado o backend da aplicação
+### Para iniciar o backend:
+* No terminal navegue para o diretório server
+* Execute o comando: npm start
+* Será inicializado o backend da aplicação
 
-Para iniciar o frontend:
-	- No terminal navegue para o diretório client
-	- Execute o comando: npm start
-	- Será inicializado o frontend da aplicação (pode demorar alguns segundos/minutos, devido a compilação do Angular), logo após vá no navegador e entre no endereço indicado no terminal pelo Angular (por padrão é http://localhost:4200/) 
+### Para iniciar o frontend:
+* No terminal navegue para o diretório client
+* Execute o comando: npm start
+* Será inicializado o frontend da aplicação (pode demorar alguns segundos/minutos, devido a compilação do Angular), logo após vá no navegador e entre no endereço indicado no terminal pelo Angular (por padrão é http://localhost:4200/) 
 
 Caso desejar iniciar os dois de uma vez:
 	- Navegue para o diretório do server e execute o comando: npm run dev
