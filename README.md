@@ -5,7 +5,7 @@ Trabalho final da disciplina COM222 - Desenvolvimento Web
 
 ## :closed_book: Informações do trabalho
 
-  # Sistema para Controle de Vendas de Imóveis
+  ### Sistema para Controle de Vendas de Imóveis
     * Disciplina: Desenvolvimento Web
     * Professor: Laercio Baldochi Júnior
     * Universidade: Unifei - Universidade Federal de Itajubá
