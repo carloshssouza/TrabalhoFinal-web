@@ -15,7 +15,7 @@
 ## :construction_worker: Desenvolvido Por
 
 ```
-Carlos Henrique Silva, curso de Sistemas de informação
+Carlos Henrique Souza Silva, curso de Sistemas de informação
 -> Matrícula: 2019015979
 
 Fauzi Consoli Esper, curso de Sistemas de informação
