@@ -49,7 +49,8 @@ Robson de Arruda Silva, curso de Sistemas de informação
    
 Como clonar o repositório?
 
-Basta abrir o git bash ou o terminal e executar o comando: `git clone https://github.com/carloshssouza/TrabalhoFinal-web`
+Basta abrir o git bash ou o terminal e executar o comando: 
+`git clone https://github.com/carloshssouza/TrabalhoFinal-web`
 
 Abrir um terminal ou git bash a partir da pasta gerada do git clone
 
