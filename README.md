@@ -31,7 +31,9 @@ Robson de Arruda Silva, curso de Sistemas de informação
     Neste trabalho, foi implementado um sistema para gestão de vendas de
     imóveis a ser utilizado por uma imobiliária. A empresa que solicitou
     o sistema trabalha com a venda de imóveis rurais e urbanos. Os imóveis
-    comercializados são dos seguintes tipos: casa, apartamento, sala comercial, lote, chácara, sítio e fazenda. Este sistema é capaz de cadastrar os imóveis à venda, com os seguintes atributos: código, tipo, descrição, nome do vendedor (proprietário), preço solicitado, imagem e data de cadastro (campo livre para digitação).
+    comercializados são dos seguintes tipos: casa, apartamento, sala comercial,
+    lote, chácara, sítio e fazenda. Este sistema é capaz de cadastrar os
+    imóveis à venda, com os seguintes atributos: código, tipo, descrição, nome do vendedor (proprietário), preço solicitado, imagem e data de cadastro (campo livre para digitação).
 
 4 - Gif da aplicação (Pode pular por enquanto)
 
