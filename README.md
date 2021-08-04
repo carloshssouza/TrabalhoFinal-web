@@ -69,11 +69,14 @@ Robson de Arruda Silva, curso de Sistemas de informação
 	
 # :trophy: Pronto, os pacotes foram instalados!
 
-Agora, para configurar a pasta de dados do mongodb:
-	No diretório server, crie um diretório chamado: data
-	Procure, no seu computador, o diretório bin do mongodb (Se o mongodb foi instalado de maneria padrão
-							   geralmente fica em C:\Program Files\MongoDB\Server\4.4\bin)
-	e abra um terminal a partir desse diretório.
+## Agora, para configurar a pasta de dados do mongodb:
+
+* No diretório server, crie um diretório chamado: data
+
+* Procure, no seu computador, o diretório bin do mongodb 
+  (Se o mongodb foi instalado de maneria padrão geralmente fica em C:\Program Files\MongoDB\Server\4.4\bin)
+  
+* Abra um terminal a partir desse diretório
 
 	Pegue o endereço do diretório 'data' criado anteriormente no diretório server
 	Agora no terminal que foi aberto na pasta bin do mongodb, execute o seguinte comando:
