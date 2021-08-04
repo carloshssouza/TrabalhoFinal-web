@@ -6,9 +6,9 @@
 ## :closed_book: Informações do trabalho
 
   ### É um Sistema para Controle de Vendas de Imóveis
-  * Disciplina: Desenvolvimento Web
-  * Professor: Laercio Baldochi Júnior
-  * Universidade: Unifei - Universidade Federal de Itajubá
+  *  Disciplina: Desenvolvimento Web
+  *  Professor: Laercio Baldochi Júnior
+  *  Universidade: Unifei - Universidade Federal de Itajubá
 
 ## :construction_worker: Desenvolvido Por
 ```
@@ -39,10 +39,10 @@ Robson de Arruda Silva, curso de Sistemas de informação
 
 ## :computer: Tecnologias utilizadas
   ### MEAN stack
-  *M - Mongo
-  *E - Express
-  *A - Angular
-  *N - Node
+  * M - Mongo
+  * E - Express
+  * A - Angular
+  * N - Node
   ### Linguagem: Typescript
 
 6 - Passo a passo para executar o projeto
