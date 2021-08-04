@@ -1,11 +1,11 @@
 # TrabalhoFinal-web
-## Este é trabalho final da disciplina COM222 - Desenvolvimento Web!
+## :boom: Este é trabalho final da disciplina COM222 - Desenvolvimento Web!
 
 ![Transferidor UDP](imagens/udp.png)
 
 ## :closed_book: Informações do trabalho
 
-  ### :boom: É um Sistema para Controle de Vendas de Imóveis
+  ### É um Sistema para Controle de Vendas de Imóveis
   * Disciplina: Desenvolvimento Web
   * Professor: Laercio Baldochi Júnior
   * Universidade: Unifei - Universidade Federal de Itajubá
