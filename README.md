@@ -40,7 +40,9 @@ Robson de Arruda Silva, curso de Sistemas de informação
     descrição, nome do vendedor (proprietário), preço solicitado, imagem e data de cadastro (campo livre para
     digitação).
 
-4 - Gif da aplicação (Pode pular por enquanto)
+<div align="center">
+  <img src="./images/Animation.gif">
+</div>
 
 ## :computer: Tecnologias utilizadas
 
