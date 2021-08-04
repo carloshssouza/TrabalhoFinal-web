@@ -1,7 +1,8 @@
 # ControlaVendas®
-## :boom: Este é trabalho final da disciplina COM222 - Desenvolvimento Web!
 
-![Transferidor UDP](imagens/udp.png)
+![Transferidor UDP](imagens/banner.png)
+
+## :boom: Este é trabalho final da disciplina COM222 - Desenvolvimento Web!
 
 ## :closed_book: Informações do trabalho
 
