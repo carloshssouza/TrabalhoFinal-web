@@ -62,24 +62,24 @@ Robson de Arruda Silva, curso de Sistemas de informação
 * Execute o comando: `npm install`
 
 ### Back-end:
-* Retorne um diretório, utilizando o comando: `cd ..`
-* Navegue para o diretório server, utilizando o comando: `cd server`
-* Execute o comando: `npm install`
-* Mantenha o terminal aberto
+* Retorne um diretório, utilizando o comando: `cd ..`;
+* Navegue para o diretório server, utilizando o comando: `cd server`;
+* Execute o comando: `npm install`;
+* Mantenha o terminal aberto.
 	
 # :trophy: Pronto, os pacotes foram instalados!
 
 ## Agora, para configurar a pasta de dados do mongodb:
 
-* No diretório server, crie um diretório chamado: data
+* No diretório server, crie um diretório chamado: `data`;
 
-* Procure, no seu computador, o diretório bin do mongodb
+* Procure, no seu computador, o diretório bin do mongodb;
 
     `(Se o mongodb foi instalado de maneira padrão, geralmente fica em C:\Program Files\MongoDB\Server\4.4\bin)`
 
-* Abra um terminal a partir desse diretório
+* Abra um terminal a partir desse diretório;
 
-* Pegue o endereço do diretório 'data' criado anteriormente no diretório server
+* Pegue o endereço do diretório 'data' criado anteriormente no diretório server;
 
 * Agora, no terminal que foi aberto na pasta bin do mongodb, execute o seguinte comando:
 
@@ -87,12 +87,12 @@ Robson de Arruda Silva, curso de Sistemas de informação
 
 
 ### Para iniciar o backend:
-* No terminal navegue para o diretório server
-* Execute o comando: npm start
-* Será inicializado o backend da aplicação
+* No terminal, navegue para o diretório server;
+* Execute o comando: `npm start`;
+* Será inicializado o backend da aplicação.
 
 ### Para iniciar o frontend:
-* No terminal navegue para o diretório client
+* No terminal, navegue para o diretório client
 * Execute o comando: npm start
 * Será inicializado o frontend da aplicação (pode demorar alguns segundos/minutos, devido a compilação do Angular), logo após vá no navegador e entre no endereço indicado no terminal pelo Angular (por padrão é http://localhost:4200/) 
 
