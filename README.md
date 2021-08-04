@@ -102,3 +102,5 @@ Robson de Arruda Silva, curso de Sistemas de informação
 indicado no terminal pelo Angular 
 
 `(por padrão é http://localhost:4200/)`
+
+# :trophy: Sucesso! O sistema já está rodando na sua máquina!
