@@ -47,9 +47,10 @@ Robson de Arruda Silva, curso de Sistemas de informação
 
 ## :dart: Passo a passo para executar o projeto
    
-Como clonar o repositório?
+### Como clonar o repositório?
 
-Basta abrir o git bash ou o terminal e executar o comando: 
+  Basta abrir o git bash ou o terminal e executar o comando: 
+
 `git clone https://github.com/carloshssouza/TrabalhoFinal-web`
 
 Abrir um terminal ou git bash a partir da pasta gerada do git clone
