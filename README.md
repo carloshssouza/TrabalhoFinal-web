@@ -98,6 +98,7 @@ Robson de Arruda Silva, curso de Sistemas de informação
 
 ## :rocket: Caso desejar iniciar os dois de uma vez:
 * Navegue para o diretório do server e execute o comando: `npm run dev`
-* Será iniciando o backend e o frontend automaticamente, o frontend da aplicação pode demorar alguns segundos/minutos, devido a compilação do Angular, logo após vá no navegador e entre no endereço indicado no terminal pelo Angular 
+* Será iniciando o backend e o frontend automaticamente, o frontend da aplicação pode demorar alguns segundos/minutos, devido a compilação do Angular, logo após vá no navegador e entre no endereço 
+indicado no terminal pelo Angular 
 
 `(por padrão é http://localhost:4200/)`
