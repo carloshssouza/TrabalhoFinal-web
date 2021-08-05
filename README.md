@@ -98,7 +98,7 @@ Em seguida, abra um terminal ou git bash a partir da pasta gerada do git clone
 
   `mongod --dbpath endereco-diretorio-data`
 
-## :rocket: Iniciar o backend e o frontend de uma vez:
+## :rocket: Iniciar o backend e o frontend juntos:
 
 - Navegue para o diretório do server e execute o comando: `npm run dev`
 - Será iniciando o backend e o frontend automaticamente, o frontend da aplicação pode demorar alguns segundos/minutos, devido a compilação do Angular. O navegador será aberto automaticamente com a aplicação`(por padrão é http://localhost:4200/)`
