@@ -96,7 +96,7 @@ Em seguida, abra um terminal ou git bash a partir da pasta gerada do git clone
 
 - Agora, no terminal que foi aberto na pasta bin do mongodb, execute o seguinte comando:
 
-  `mongod --dbpatch endereco-diretorio-data`
+  `mongod --dbpath endereco-diretorio-data`
 
 ### Para iniciar o backend:
 
