@@ -69,6 +69,7 @@ Em seguida, abra um terminal ou git bash a partir da pasta gerada do git clone
 
 ### Front-end:
 
+- Entre na pasta do projeto usando: `cd TrabalhoFinal-web`
 - Navegue para o diretório client, utilizando o comando: `cd client`
 - Execute o comando: `npm install`
 
